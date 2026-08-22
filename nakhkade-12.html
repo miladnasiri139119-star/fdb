@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نخ‌کده | مقایسه و خرید چرخ خیاطی</title>
+<style>
+  :root{
+    --clay:#b5542c;
+    --clay-dark:#8f4020;
+    --cream:#f6f1e7;
+    --ink:#2b241c;
+    --thread:#c9a876;
+    --line:#e2d6c0;
+    --ok:#3f7d4e;
+    --white:#fffdfa;
+    --warn:#a63b2a;
+    --muted:#8a7c63;
+  }
+  html[data-theme="dark"]{
+    --clay:#d97a4a;
+    --clay-dark:#e8935f;
+    --cream:#1c1712;
+    --ink:#f0e9dc;
+    --thread:#8a6d3f;
+    --line:#3a3126;
+    --ok:#5fae74;
+    --white:#241e17;
+    --warn:#e0645080;
+    --muted:#a89a7d;
+  }
+  *{box-sizing:border-box;}
+  html{transition:background .25s;}
+  body{
+    margin:0;
+    font-family:'Vazirmatn','Tahoma',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    transition:background .25s, color .25s;
+  }
+  header{
+    background:linear-gradient(135deg,var(--clay),var(--clay-dark));
+    color:var(--white);
+    padding:28px 20px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px);
+  }
+  header h1{
+    margin:0;
+    font-size:2rem;
+    letter-spacing:1px;
+    position:relative;
+  }
+  header p{
+    margin:6px 0 0;
+    opacity:.9;
+    position:relative;
+  }
+  nav{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    background:var(--white);
+    padding:12px;
+    border-bottom:2px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  nav button{
+    border:1.5px solid var(--thread);
+    background:transparent;
+    color:var(--ink);
+    padding:8px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:.95rem;
+    transition:.2s;
+  }
+  nav button.active, nav button:hover{
+    background:var(--clay);
+    color:var(--white);
+    border-color:var(--clay);
+  }
+  main{max-width:1100px;margin:0 auto;padding:24px 16px 60px;}
+  .search-bar{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .search-bar input, .search-bar select{
+    flex:1;
+    min-width:150px;
+    padding:10px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:inherit;
+    font-size:1rem;
+    background:var(--white);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:18px;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 2px 8px rgba(43,36,28,.06);
+    transition:transform .15s;
+    position:relative;
+  }
+  .card:hover{transform:translateY(-3px);}
+  .card-img-wrap{
+    position:relative;
+    aspect-ratio:4/3;
+    background:var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .card-img-wrap img{
+    width:100%;height:100%;object-fit:cover;
+  }
+  .card-img-wrap .placeholder{
+    color:#9a8c72;
+    font-size:.85rem;
+    text-align:center;
+    padding:10px;
+  }
+  .badge{
+    position:absolute;
+    top:8px;right:8px;
+    background:var(--clay);
+    color:var(--white);
+    font-size:.72rem;
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .status-badge{
+    position:absolute;
+    top:8px;left:8px;
+    font-size:.72rem;
+    padding:3px 10px;
+    border-radius:20px;
+    color:var(--white);
+    font-weight:bold;
+  }
+  .status-badge.status-available{background:var(--ok);}
+  .status-badge.status-unavailable{background:#a63b2a;}
+  .status-badge.status-preorder{background:#c78a1f;}
+  .theme-toggle{
+    border:1.5px solid rgba(255,255,255,.6);
+    background:rgba(255,255,255,.12);
+    color:var(--white);
+    width:38px;height:38px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:1.1rem;
+    position:absolute;
+    left:16px;top:16px;
+    display:flex;
+    align-items:center;justify-content:center;
+    transition:.2s;
+    z-index:2;
+  }
+  .theme-toggle:hover{background:rgba(255,255,255,.25);}
+  .upload-btn-wrap{
+    position:absolute;
+    bottom:8px;left:8px;
+  }
+  .upload-btn{
+    background:rgba(43,36,28,.75);
+    color:var(--white);
+    border:none;
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:.72rem;
+    cursor:pointer;
+    display:inline-block;
+  }
+  .upload-btn:hover{background:var(--clay);}
+  .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .card-body h3{margin:0;font-size:1.05rem;}
+  .card-body .cat{color:var(--clay-dark);font-size:.8rem;font-weight:bold;}
+  .card-body .desc{color:#5c5346;font-size:.85rem;flex:1;}
+  .card-body .price{font-weight:bold;font-size:1.05rem;color:var(--ink);}
+  .order-btn{
+    margin-top:6px;
+    background:var(--clay);
+    color:var(--white);
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:.95rem;
+    font-family:inherit;
+  }
+  .order-btn:hover{background:var(--clay-dark);}
+
+  .section-title{
+    font-size:1.3rem;
+    margin:0 0 14px;
+    border-right:4px solid var(--clay);
+    padding-right:10px;
+  }
+  .about-box{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:30px;
+  }
+  .about-box h2{margin-top:0;}
+  .about-box ul{padding-right:20px;}
+
+  .add-product-box{
+    background:var(--white);
+    border:2px dashed var(--thread);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:24px;
+  }
+  .add-product-box h2{margin-top:0;font-size:1.15rem;}
+  .form-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+  .form-row > *{flex:1;min-width:140px;}
+  label{font-size:.85rem;color:#5c5346;display:block;margin-bottom:4px;}
+  input[type=text], input[type=tel], input[type=number], textarea, select{
+    width:100%;
+    padding:9px 12px;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    font-family:inherit;
+    font-size:.95rem;
+    background:var(--cream);
+  }
+  textarea{resize:vertical;min-height:60px;}
+
+  .file-input-visually-hidden{
+    position:absolute;
+    width:0.1px;height:0.1px;
+    opacity:0;
+    overflow:hidden;
+    z-index:-1;
+  }
+  .file-label-btn{
+    display:inline-block;
+    background:var(--thread);
+    color:var(--ink);
+    padding:9px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:.9rem;
+    text-align:center;
+  }
+  .file-label-btn:hover{background:#b8975c;}
+
+  .upload-status{
+    font-size:.8rem;
+    margin-top:6px;
+    min-height:18px;
+  }
+  .upload-status.loading{color:#8a6d1f;}
+  .upload-status.success{color:var(--ok);}
+  .upload-status.error{color:#a63b2a;}
+
+  .modal-overlay{
+    position:fixed;inset:0;
+    background:rgba(43,36,28,.55);
+    display:none;
+    align-items:center;justify-content:center;
+    padding:16px;
+    z-index:100;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--white);
+    border-radius:16px;
+    max-width:420px;
+    width:100%;
+    padding:24px;
+    max-height:90vh;
+    overflow-y:auto;
+  }
+  .modal h2{margin-top:0;font-size:1.2rem;}
+  .modal-close{
+    float:left;
+    background:none;
+    border:none;
+    font-size:1.3rem;
+    cursor:pointer;
+    color:#5c5346;
+  }
+  .thumb-preview{
+    max-width:100%;
+    max-height:140px;
+    border-radius:10px;
+    margin-top:8px;
+    display:none;
+  }
+  footer{
+    text-align:center;
+    padding:20px;
+    color:#8a7c63;
+    font-size:.85rem;
+  }
+  .empty-msg{
+    text-align:center;
+    color:#8a7c63;
+    padding:40px 0;
+    grid-column:1/-1;
+  }
+  .toast{
+    position:fixed;
+    bottom:20px;left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--ink);
+    color:var(--white);
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:.9rem;
+    opacity:0;
+    transition:.3s;
+    z-index:200;
+    pointer-events:none;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* --- علاقه‌مندی --- */
+  .fav-btn{
+    position:absolute;
+    bottom:8px;right:8px;
+    background:rgba(43,36,28,.75);
+    color:var(--white);
+    border:none;
+    width:32px;height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:1rem;
+    display:flex;align-items:center;justify-content:center;
+    transition:.2s;
+  }
+  .fav-btn:hover{background:var(--clay);}
+  .fav-btn.active{background:var(--warn);color:#fff;}
+
+  /* --- امتیاز و نظرات --- */
+  .rating-row{display:flex;align-items:center;gap:6px;font-size:.85rem;color:var(--muted);}
+  .stars{color:#c78a1f;letter-spacing:1px;font-size:.95rem;}
+  .review-count{color:var(--muted);font-size:.78rem;}
+  .review-toggle-btn{
+    background:none;border:none;color:var(--clay-dark);
+    font-size:.8rem;cursor:pointer;padding:0;text-align:right;
+    text-decoration:underline;
+  }
+  .review-panel{
+    display:none;
+    border-top:1px solid var(--line);
+    margin-top:8px;padding-top:10px;
+  }
+  .review-panel.open{display:block;}
+  .review-item{
+    background:var(--cream);
+    border-radius:8px;
+    padding:8px 10px;
+    margin-bottom:6px;
+    font-size:.82rem;
+  }
+  .review-item .review-stars{color:#c78a1f;font-size:.8rem;}
+  .review-item .review-author{font-weight:bold;font-size:.78rem;}
+  .review-item .review-text{color:var(--muted);margin-top:2px;}
+  .review-empty{font-size:.8rem;color:var(--muted);}
+  .add-review-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .star-picker{display:flex;gap:2px;font-size:1.1rem;cursor:pointer;}
+  .star-picker span{color:var(--line);}
+  .star-picker span.filled{color:#c78a1f;}
+  .add-review-row input[type=text]{flex:1;min-width:110px;padding:6px 10px;font-size:.82rem;}
+  .add-review-row button{
+    background:var(--clay);color:var(--white);border:none;
+    padding:6px 12px;border-radius:8px;font-size:.8rem;cursor:pointer;
+  }
+
+  /* --- مقایسه محصولات --- */
+  .compare-check-wrap{
+    display:flex;align-items:center;gap:6px;
+    font-size:.8rem;color:var(--muted);margin-top:4px;
+  }
+  .compare-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--ink);
+    color:var(--white);
+    padding:10px 16px;
+    display:none;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    z-index:150;
+    flex-wrap:wrap;
+  }
+  .compare-bar.show{display:flex;}
+  .compare-bar button{
+    background:var(--clay);
+    color:var(--white);
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:.85rem;
+  }
+  .compare-bar .clear-compare{background:transparent;border:1px solid var(--white);}
+  .compare-table{width:100%;border-collapse:collapse;font-size:.85rem;}
+  .compare-table th, .compare-table td{
+    border:1px solid var(--line);
+    padding:8px 10px;
+    text-align:center;
+    vertical-align:top;
+  }
+  .compare-table th{background:var(--cream);}
+  .compare-table td img{width:100%;max-width:110px;border-radius:8px;}
+
+  /* --- بنر تبلیغاتی --- */
+  .promo-banner{
+    position:relative;
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:22px;
+    background:linear-gradient(120deg,var(--clay-dark),var(--clay) 60%,var(--thread));
+    color:var(--white);
+  }
+  .promo-slides{display:flex;transition:transform .5s ease;}
+  .promo-slide{
+    min-width:100%;
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    position:relative;
+  }
+  .promo-slide::before{
+    content:"";
+    position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 14px);
+    pointer-events:none;
+  }
+  .promo-slide h3{margin:0;font-size:1.25rem;position:relative;}
+  .promo-slide p{margin:0;opacity:.92;font-size:.9rem;position:relative;}
+  .promo-slide .promo-price-row{display:flex;align-items:center;gap:10px;margin-top:4px;position:relative;}
+  .promo-old-price{text-decoration:line-through;opacity:.75;font-size:.85rem;}
+  .promo-new-price{font-weight:bold;font-size:1.15rem;}
+  .promo-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 14px;background:rgba(0,0,0,.08);}
+  .promo-dots button{
+    width:8px;height:8px;border-radius:50%;
+    border:none;background:rgba(255,255,255,.5);
+    cursor:pointer;padding:0;
+  }
+  .promo-dots button.active{background:#fff;}
+  .promo-nav-btn{
+    position:absolute;top:50%;transform:translateY(-50%);
+    background:rgba(0,0,0,.25);color:#fff;border:none;
+    width:30px;height:30px;border-radius:50%;
+    cursor:pointer;font-size:1rem;z-index:2;
+  }
+  .promo-nav-btn.prev{right:10px;}
+  .promo-nav-btn.next{left:10px;}
+
+  /* --- تخفیف / قیمت‌گذاری --- */
+  .discount-badge{
+    position:absolute;
+    top:8px;left:44px;
+    background:var(--warn);
+    color:#fff;
+    font-size:.7rem;
+    font-weight:bold;
+    padding:3px 8px;
+    border-radius:20px;
+  }
+  .price-old{
+    text-decoration:line-through;
+    color:var(--muted);
+    font-size:.82rem;
+    margin-left:6px;
+  }
+  .price-discounted{color:var(--warn);}
+
+  /* --- چت‌بات راهنما --- */
+  .chatbot-toggle{
+    position:fixed;
+    bottom:20px;right:20px;
+    width:54px;height:54px;
+    border-radius:50%;
+    background:var(--clay);
+    color:#fff;
+    border:none;
+    font-size:1.4rem;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(43,36,28,.3);
+    z-index:190;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chatbot-toggle:hover{background:var(--clay-dark);}
+  .chatbot-panel{
+    position:fixed;
+    bottom:84px;right:20px;
+    width:300px;
+    max-width:88vw;
+    max-height:60vh;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(43,36,28,.25);
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:190;
+  }
+  .chatbot-panel.open{display:flex;}
+  .chatbot-header{
+    background:var(--clay);
+    color:#fff;
+    padding:10px 14px;
+    font-size:.9rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .chatbot-header button{background:none;border:none;color:#fff;font-size:1.1rem;cursor:pointer;}
+  .chatbot-messages{
+    flex:1;
+    overflow-y:auto;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .chat-msg{
+    padding:8px 12px;
+    border-radius:12px;
+    font-size:.83rem;
+    max-width:85%;
+    line-height:1.6;
+  }
+  .chat-msg.bot{background:var(--cream);align-self:flex-start;}
+  .chat-msg.user{background:var(--clay);color:#fff;align-self:flex-end;}
+  .chatbot-questions{
+    padding:8px 10px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .chatbot-questions button{
+    background:var(--cream);
+    border:1px solid var(--line);
+    color:var(--ink);
+    font-size:.76rem;
+    padding:5px 10px;
+    border-radius:14px;
+    cursor:pointer;
+  }
+  .chatbot-questions button:hover{background:var(--thread);color:#fff;}
+
+  /* --- نصب PWA --- */
+  .install-modal .modal{max-width:380px;text-align:center;}
+  .install-icon{
+    width:72px;height:72px;
+    margin:6px auto 14px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--clay),var(--clay-dark));
+    display:flex;align-items:center;justify-content:center;
+    font-size:2rem;color:#fff;
+    box-shadow:0 4px 14px rgba(43,36,28,.25);
+  }
+  .install-modal h2{margin-bottom:4px;}
+  .install-modal p{color:var(--muted);font-size:.9rem;margin:0 0 18px;}
+  .install-actions{display:flex;gap:10px;justify-content:center;}
+  .install-actions button{
+    flex:1;
+    padding:11px 14px;
+    border-radius:10px;
+    font-size:.92rem;
+    cursor:pointer;
+    font-family:inherit;
+    border:none;
+  }
+  .install-yes{background:var(--clay);color:#fff;}
+  .install-yes:hover{background:var(--clay-dark);}
+  .install-no{background:transparent;border:1.5px solid var(--line) !important;color:var(--muted);}
+  .install-success{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:6px 0 4px;
+  }
+  .install-success .install-icon{background:linear-gradient(135deg,var(--ok),#2f6b3d);}
+  .install-success p{color:var(--ink);font-weight:bold;font-size:1rem;margin:0;}
+  .install-success span{color:var(--muted);font-size:.82rem;}
+  .install-manual-steps{
+    text-align:right;
+    background:var(--cream);
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:.82rem;
+    color:var(--muted);
+    margin-bottom:16px;
+    line-height:1.9;
+  }
+  .install-nav-btn{position:relative;}
+  .install-nav-btn::after{
+    content:"";
+    position:absolute;top:2px;left:2px;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--ok);
+    display:none;
+  }
+  .install-nav-btn.has-update::after{display:block;}
+
+  /* --- سفارش‌های من --- */
+  .order-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+    margin-bottom:14px;
+  }
+  .order-card-top{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:10px;flex-wrap:wrap;margin-bottom:10px;
+  }
+  .order-card h4{margin:0 0 4px;font-size:1rem;}
+  .order-code{font-size:.78rem;color:var(--muted);}
+  .order-date{font-size:.78rem;color:var(--muted);}
+  .order-status-pill{
+    font-size:.75rem;font-weight:bold;
+    padding:4px 12px;border-radius:20px;color:#fff;
+    white-space:nowrap;
+  }
+  .order-status-pill.pending{background:#c78a1f;}
+  .order-status-pill.confirmed{background:#3d7ab5;}
+  .order-status-pill.shipped{background:#7a5cc7;}
+  .order-status-pill.delivered{background:var(--ok);}
+  .order-steps{display:flex;gap:4px;margin-top:8px;}
+  .order-steps span{
+    flex:1;height:5px;border-radius:4px;background:var(--line);
+  }
+  .order-steps span.done{background:var(--ok);}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" title="تغییر حالت تاریک/روشن">🌙</button>
+  <h1>نخ‌کده</h1>
+  <p>مقایسه و خرید راحت‌تر چرخ خیاطی صنعتی و خانگی</p>
+</header>
+
+<nav>
+  <button class="active" data-tab="shop">فروشگاه</button>
+  <button data-tab="favorites">علاقه‌مندی‌ها ❤️</button>
+  <button data-tab="orders">سفارش‌های من 🧾</button>
+  <button data-tab="add">افزودن محصول</button>
+  <button data-tab="about">درباره نخ‌کده</button>
+  <button class="install-nav-btn" id="navInstallBtn" title="نصب نرم‌افزار">📲 نصب برنامه</button>
+</nav>
+
+<main>
+
+  <!-- SHOP TAB -->
+  <section id="tab-shop">
+    <div class="promo-banner" id="promoBanner">
+      <div class="promo-slides" id="promoSlides"></div>
+      <button class="promo-nav-btn prev" id="promoPrev">›</button>
+      <button class="promo-nav-btn next" id="promoNext">‹</button>
+      <div class="promo-dots" id="promoDots"></div>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="جستجوی چرخ خیاطی...">
+      <select id="categoryFilter">
+        <option value="all">همه دسته‌ها</option>
+        <option value="صنعتی">صنعتی</option>
+        <option value="خانگی">خانگی</option>
+      </select>
+      <select id="statusFilter">
+        <option value="all">همه وضعیت‌ها</option>
+        <option value="available">موجود</option>
+        <option value="unavailable">ناموجود</option>
+        <option value="preorder">پیش‌سفارش</option>
+      </select>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <!-- FAVORITES TAB -->
+  <section id="tab-favorites" style="display:none;">
+    <h2 class="section-title">علاقه‌مندی‌های من</h2>
+    <div class="grid" id="favoritesGrid"></div>
+  </section>
+
+  <!-- ORDERS TAB -->
+  <section id="tab-orders" style="display:none;">
+    <h2 class="section-title">سفارش‌های من</h2>
+    <div id="ordersList"></div>
+  </section>
+
+  <!-- ADD PRODUCT TAB -->
+  <section id="tab-add" style="display:none;">
+    <div class="add-product-box">
+      <h2>افزودن محصول جدید (فروشنده)</h2>
+      <div class="form-row">
+        <div>
+          <label>نام محصول</label>
+          <input type="text" id="newName" placeholder="مثلاً چرخ خیاطی جوکی">
+        </div>
+        <div>
+          <label>دسته‌بندی</label>
+          <select id="newCategory">
+            <option value="صنعتی">صنعتی</option>
+            <option value="خانگی">خانگی</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>قیمت (تومان)</label>
+          <input type="number" id="newPrice" placeholder="مثلاً 4500000">
+        </div>
+        <div>
+          <label>وضعیت محصول</label>
+          <select id="newStatus">
+            <option value="available">موجود</option>
+            <option value="unavailable">ناموجود</option>
+            <option value="preorder">پیش‌سفارش</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>درصد تخفیف (اختیاری)</label>
+          <input type="number" id="newDiscount" placeholder="مثلاً 10" min="0" max="90">
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>توضیحات</label>
+          <textarea id="newDesc" placeholder="توضیح کوتاه درباره محصول"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>عکس محصول</label><br>
+          <label class="file-label-btn" for="newImageInput">انتخاب عکس</label>
+          <input type="file" id="newImageInput" accept="image/*" class="file-input-visually-hidden">
+          <img id="newImagePreview" class="thumb-preview">
+          <div id="newImageStatus" class="upload-status"></div>
+        </div>
+      </div>
+      <button class="order-btn" id="addProductBtn">افزودن محصول</button>
+    </div>
+  </section>
+
+  <!-- ABOUT TAB -->
+  <section id="tab-about" style="display:none;">
+    <div class="about-box">
+      <h2>درباره نخ‌کده</h2>
+      <p><strong>مسئله:</strong> خرید چرخ خیاطی صنعتی یا خانگی با روش‌های فعلی (مراجعه حضوری یا خرید غیرحضوری بدون مقایسه) سخت و زمان‌بر است؛ گاهی فقط بازرسی حضوری باعث خرید بهتر می‌شود.</p>
+      <p><strong>کاربر هدف:</strong> افرادی که به‌دنبال خرید چرخ خیاطی هستند، از خیاط‌های حرفه‌ای تا افرادی که در اوقات فراغت خیاطی می‌کنند.</p>
+      <p><strong>ارزش محصول:</strong> نخ‌کده یک سایت رایگان و بدون نیاز به اشتراک است که مقایسه و خرید چرخ خیاطی را راحت‌تر می‌کند؛ هدف ما کمک به هموطنان برای خریدی آگاهانه‌تر است.</p>
+      <ul>
+        <li>نمایش و دسته‌بندی انواع چرخ خیاطی</li>
+        <li>جستجو و فیلتر کردن چرخ مناسب</li>
+        <li>ثبت سفارش و ارتباط با فروشنده</li>
+      </ul>
+      <p style="font-size:.85rem;color:#8a7c63;">این نسخه یک نمونه دمو برای پروژه دانش‌آموزی است؛ پرداخت آنلاین واقعی در آن انجام نمی‌شود.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="closeOrderModal">×</button>
+    <h2>ثبت سفارش</h2>
+    <p id="orderProductName" style="color:var(--clay-dark);font-weight:bold;"></p>
+    <label>نام و نام خانوادگی</label>
+    <input type="text" id="orderName" placeholder="نام شما">
+    <br><br>
+    <label>شماره تماس</label>
+    <input type="tel" id="orderPhone" placeholder="09xxxxxxxxx">
+    <br><br>
+    <label>پیوست عکس (اختیاری)</label><br>
+    <label class="file-label-btn" for="orderImageInput">انتخاب عکس</label>
+    <input type="file" id="orderImageInput" accept="image/*" class="file-input-visually-hidden">
+    <img id="orderImagePreview" class="thumb-preview">
+    <div id="orderImageStatus" class="upload-status"></div>
+    <br>
+    <button class="order-btn" id="submitOrderBtn">ثبت سفارش</button>
+  </div>
+</div>
+
+<!-- COMPARE MODAL -->
+<div class="modal-overlay" id="compareModalOverlay">
+  <div class="modal" style="max-width:700px;">
+    <button class="modal-close" id="closeCompareModal">×</button>
+    <h2>مقایسه محصولات</h2>
+    <div style="overflow-x:auto;">
+      <table class="compare-table" id="compareTable"></table>
+    </div>
+  </div>
+</div>
+
+<div class="compare-bar" id="compareBar">
+  <span id="compareCountLabel">۰ محصول برای مقایسه انتخاب شده</span>
+  <div style="display:flex;gap:8px;">
+    <button class="clear-compare" id="clearCompareBtn">پاک کردن</button>
+    <button id="openCompareBtn">مقایسه کن</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- CHATBOT -->
+<button class="chatbot-toggle" id="chatbotToggle" title="راهنمای نخ‌کده">💬</button>
+<div class="chatbot-panel" id="chatbotPanel">
+  <div class="chatbot-header">
+    <span>راهنمای نخ‌کده</span>
+    <button id="chatbotClose">×</button>
+  </div>
+  <div class="chatbot-messages" id="chatbotMessages"></div>
+  <div class="chatbot-questions" id="chatbotQuestions"></div>
+</div>
+
+<!-- INSTALL MODAL -->
+<div class="modal-overlay install-modal" id="installModalOverlay">
+  <div class="modal">
+
+    <div id="installAskBox">
+      <div class="install-icon">🪡</div>
+      <h2>نصب نخ‌کده روی دستگاه شما</h2>
+      <p>با نصب برنامه، دسترسی سریع‌تری از صفحه اصلی گوشی خود به نخ‌کده خواهید داشت — بدون نیاز به مرورگر.</p>
+      <div class="install-actions">
+        <button class="install-no" id="installNoBtn">فعلاً نه</button>
+        <button class="install-yes" id="installYesBtn">بله، نصب کن</button>
+      </div>
+    </div>
+
+    <div id="installManualBox" style="display:none;">
+      <div class="install-icon">🪡</div>
+      <h2>نصب روی آیفون / آیپد</h2>
+      <div class="install-manual-steps">
+        ۱. روی دکمه اشتراک‌گذاری Safari (⬆️) بزنید<br>
+        ۲. گزینه «Add to Home Screen» را انتخاب کنید<br>
+        ۳. روی «Add» بزنید — آیکون نخ‌کده به صفحه اصلی اضافه می‌شود
+      </div>
+      <div class="install-actions">
+        <button class="install-yes" id="installManualDoneBtn" style="flex:1;">متوجه شدم</button>
+      </div>
+    </div>
+
+    <div id="installSuccessBox" style="display:none;">
+      <div class="install-success">
+        <div class="install-icon">✓</div>
+        <p>نخ‌کده نصب شد!</p>
+        <span id="installSuccessSubtitle"></span>
+      </div>
+      <div class="install-actions" style="margin-top:16px;">
+        <button class="install-yes" id="installSuccessDoneBtn" style="flex:1;">باشه</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>نخ‌کده © نسخه دمو — پروژه دانش‌آموزی</footer>
+
+<script>
+/* ---------- تنظیمات imgbb ---------- */
+const IMGBB_API_KEY = "3b910f54a2e41bafb5576fa31a027059";
+const IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload";
+
+/* ---------- داده اولیه محصولات ---------- */
+const DEFAULT_PRODUCTS = [
+  {id:"p1", name:"چرخ خیاطی صنعتی جوکی مدل DDL-8700", category:"صنعتی", price:12500000, desc:"چرخ صنعتی تک سوزنه با موتور مستقیم، مناسب تولید انبوه.", image:null, status:"available", discount:10},
+  {id:"p2", name:"چرخ خیاطی صنعتی براذر S-7200", category:"صنعتی", price:9800000, desc:"سرعت بالا، مناسب دوخت پارچه‌های ضخیم و متوسط.", image:null, status:"unavailable", discount:0},
+  {id:"p3", name:"چرخ خیاطی صنعتی پگاسوس دوسوزنه", category:"صنعتی", price:15200000, desc:"دوخت هم‌زمان دو ردیف، مناسب کارگاه‌های تولیدی.", image:null, status:"preorder", discount:0},
+  {id:"p4", name:"چرخ خیاطی خانگی سینگر ۸۲۸۰", category:"خانگی", price:3200000, desc:"مناسب مبتدیان، دارای چند نوع کوک ساده.", image:null, status:"available", discount:15},
+  {id:"p5", name:"چرخ خیاطی خانگی برادر JA-1400", category:"خانگی", price:4100000, desc:"سبک و کم‌صدا، مناسب استفاده خانگی روزمره.", image:null, status:"available", discount:0},
+  {id:"p6", name:"چرخ خیاطی خانگی جانومه ۲۲۱۲", category:"خانگی", price:5300000, desc:"کیفیت بالا با کوک‌های متنوع، مناسب دوخت‌های نیمه‌حرفه‌ای.", image:null, status:"unavailable", discount:0}
+];
+
+function loadProducts(){
+  try{
+    const stored = localStorage.getItem("nakhkade_products");
+    if(stored) return JSON.parse(stored);
+  }catch(e){}
+  return DEFAULT_PRODUCTS.slice();
+}
+function saveProducts(products){
+  localStorage.setItem("nakhkade_products", JSON.stringify(products));
+}
+let products = loadProducts();
+
+/* ---------- علاقه‌مندی‌ها ---------- */
+function loadFavorites(){
+  try{ return JSON.parse(localStorage.getItem("nakhkade_favorites") || "[]"); }
+  catch(e){ return []; }
+}
+function saveFavorites(favs){
+  localStorage.setItem("nakhkade_favorites", JSON.stringify(favs));
+}
+let favorites = loadFavorites();
+function toggleFavorite(id){
+  const idx = favorites.indexOf(id);
+  if(idx === -1){ favorites.push(id); showToast("به علاقه‌مندی‌ها اضافه شد ❤️"); }
+  else { favorites.splice(idx,1); showToast("از علاقه‌مندی‌ها حذف شد"); }
+  saveFavorites(favorites);
+}
+
+/* ---------- امتیاز و نظرات ---------- */
+function loadReviews(){
+  try{ return JSON.parse(localStorage.getItem("nakhkade_reviews") || "{}"); }
+  catch(e){ return {}; }
+}
+function saveReviews(reviews){
+  localStorage.setItem("nakhkade_reviews", JSON.stringify(reviews));
+}
+let reviews = loadReviews(); // { productId: [{author, stars, text}, ...] }
+
+function getProductReviews(id){
+  return reviews[id] || [];
+}
+function getAvgRating(id){
+  const list = getProductReviews(id);
+  if(list.length === 0) return null;
+  const sum = list.reduce((s,r)=>s+r.stars, 0);
+  return sum / list.length;
+}
+function starsHtml(avg){
+  const rounded = Math.round(avg || 0);
+  let html = "";
+  for(let i=1;i<=5;i++) html += (i<=rounded) ? "★" : "☆";
+  return html;
+}
+
+/* ---------- مقایسه محصولات ---------- */
+let compareList = [];
+function toggleCompare(id, checked){
+  if(checked){
+    if(compareList.length >= 3){
+      showToast("حداکثر ۳ محصول قابل مقایسه است");
+      renderProducts();
+      return;
+    }
+    if(!compareList.includes(id)) compareList.push(id);
+  } else {
+    compareList = compareList.filter(x=>x!==id);
+  }
+  updateCompareBar();
+}
+function updateCompareBar(){
+  const bar = document.getElementById("compareBar");
+  const label = document.getElementById("compareCountLabel");
+  label.textContent = compareList.length + " محصول برای مقایسه انتخاب شده";
+  bar.classList.toggle("show", compareList.length > 0);
+}
+
+/* ---------- تب‌ها ---------- */
+document.querySelectorAll("nav button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    ["shop","favorites","orders","add","about"].forEach(t=>{
+      document.getElementById("tab-"+t).style.display = (t===btn.dataset.tab) ? "block" : "none";
+    });
+    if(btn.dataset.tab === "favorites") renderFavorites();
+    if(btn.dataset.tab === "orders") renderOrders();
+  });
+});
+
+/* ---------- toast ---------- */
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"), 2600);
+}
+
+/* ---------- آپلود عکس به imgbb ---------- */
+// image: File object
+// statusEl: element to show progress/errors in
+// previewEl: img element to show preview in
+// onDone(url): callback called with the imgbb url on success
+function uploadToImgbb(file, statusEl, previewEl, onDone){
+  if(!file) return;
+
+  if(!IMGBB_API_KEY || IMGBB_API_KEY.includes("YOUR_")){
+    statusEl.textContent = "کلید API imgbb تنظیم نشده است.";
+    statusEl.className = "upload-status error";
+    return;
+  }
+
+  // پیش‌نمایش فوری محلی قبل از آپلود
+  const localPreviewUrl = URL.createObjectURL(file);
+  previewEl.src = localPreviewUrl;
+  previewEl.style.display = "block";
+
+  statusEl.textContent = "در حال بارگذاری عکس...";
+  statusEl.className = "upload-status loading";
+
+  const reader = new FileReader();
+  reader.onload = function(){
+    // reader.result شامل "data:image/png;base64,XXXX" است
+    const base64Data = reader.result.split(",")[1];
+
+    const formData = new FormData();
+    formData.append("key", IMGBB_API_KEY);
+    formData.append("image", base64Data);
+
+    fetch(IMGBB_UPLOAD_URL, {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data && data.success && data.data && data.data.url){
+        statusEl.textContent = "عکس با موفقیت بارگذاری شد ✓";
+        statusEl.className = "upload-status success";
+        previewEl.src = data.data.url;
+        onDone(data.data.url);
+      } else {
+        const errMsg = (data && data.error && data.error.message) ? data.error.message : "خطای نامشخص از سرور imgbb";
+        statusEl.textContent = "خطا در بارگذاری: " + errMsg;
+        statusEl.className = "upload-status error";
+      }
+    })
+    .catch(err => {
+      statusEl.textContent = "خطا در اتصال به imgbb. اتصال اینترنت را بررسی کنید.";
+      statusEl.className = "upload-status error";
+      console.error(err);
+    });
+  };
+  reader.onerror = function(){
+    statusEl.textContent = "خطا در خواندن فایل عکس.";
+    statusEl.className = "upload-status error";
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ---------- رندر محصولات ---------- */
+const STATUS_LABELS = {
+  available:"موجود",
+  unavailable:"ناموجود",
+  preorder:"پیش‌سفارش"
+};
+
+function renderProducts(){
+  const grid = document.getElementById("productGrid");
+  const search = document.getElementById("searchInput").value.trim().toLowerCase();
+  const cat = document.getElementById("categoryFilter").value;
+  const status = document.getElementById("statusFilter").value;
+
+  const filtered = products.filter(p=>{
+    const matchSearch = p.name.toLowerCase().includes(search) || p.desc.toLowerCase().includes(search);
+    const matchCat = (cat === "all") || (p.category === cat);
+    const matchStatus = (status === "all") || (p.status === status);
+    return matchSearch && matchCat && matchStatus;
+  });
+
+  grid.innerHTML = "";
+
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="empty-msg">محصولی با این مشخصات یافت نشد.</div>';
+    return;
+  }
+
+  filtered.forEach(p=>{
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const imgHtml = p.image
+      ? `<img src="${p.image}" alt="${p.name}">`
+      : `<div class="placeholder">بدون عکس</div>`;
+
+    const statusKey = p.status || "available";
+    const statusLabel = STATUS_LABELS[statusKey] || STATUS_LABELS.available;
+    const isUnavailable = statusKey === "unavailable";
+    const orderBtnLabel = isUnavailable ? "ناموجود" : (statusKey === "preorder" ? "ثبت پیش‌سفارش" : "ثبت سفارش");
+    const isFav = favorites.includes(p.id);
+    const avg = getAvgRating(p.id);
+    const revList = getProductReviews(p.id);
+    const isComparing = compareList.includes(p.id);
+    const discount = p.discount || 0;
+    const finalPrice = discount > 0 ? Math.round(p.price * (1 - discount/100)) : p.price;
+    const priceHtml = discount > 0
+      ? `<span class="price-old">${p.price.toLocaleString("fa-IR")}</span><span class="price-discounted">${finalPrice.toLocaleString("fa-IR")} تومان</span>`
+      : `${p.price.toLocaleString("fa-IR")} تومان`;
+    const discountBadgeHtml = discount > 0 ? `<span class="discount-badge">${discount}% تخفیف</span>` : "";
+
+    card.innerHTML = `
+      <div class="card-img-wrap">
+        ${imgHtml}
+        <span class="badge">${p.category}</span>
+        <span class="status-badge status-${statusKey}">${statusLabel}</span>
+        ${discountBadgeHtml}
+        <div class="upload-btn-wrap">
+          <label class="upload-btn" for="fileInput-${p.id}">بارگذاری عکس</label>
+        </div>
+        <button class="fav-btn ${isFav ? "active" : ""}" data-fav-id="${p.id}" title="افزودن به علاقه‌مندی‌ها">${isFav ? "♥" : "♡"}</button>
+      </div>
+      <div class="card-body">
+        <span class="cat">${p.category}</span>
+        <h3>${p.name}</h3>
+        <div class="desc">${p.desc}</div>
+        <div class="rating-row">
+          <span class="stars">${starsHtml(avg)}</span>
+          <span class="review-count">${avg ? avg.toFixed(1) : "بدون امتیاز"} (${revList.length} نظر)</span>
+        </div>
+        <div class="price">${priceHtml}</div>
+        <button class="order-btn" data-order-id="${p.id}" ${isUnavailable ? "disabled style=\"opacity:.55;cursor:not-allowed;\"" : ""}>${orderBtnLabel}</button>
+        <button class="review-toggle-btn" data-review-toggle="${p.id}">مشاهده / ثبت نظر</button>
+        <label class="compare-check-wrap">
+          <input type="checkbox" class="compare-check" data-compare-id="${p.id}" ${isComparing ? "checked" : ""}>
+          افزودن به مقایسه
+        </label>
+        <div class="review-panel" id="reviewPanel-${p.id}">
+          <div id="reviewList-${p.id}">
+            ${revList.length === 0
+              ? '<div class="review-empty">هنوز نظری ثبت نشده. اولین نفر باشید!</div>'
+              : revList.map(r=>`
+                <div class="review-item">
+                  <span class="review-author">${r.author}</span>
+                  <span class="review-stars">${"★".repeat(r.stars)}${"☆".repeat(5-r.stars)}</span>
+                  <div class="review-text">${r.text || ""}</div>
+                </div>`).join("")}
+          </div>
+          <div class="add-review-row">
+            <span class="star-picker" data-picker-for="${p.id}">
+              ${[1,2,3,4,5].map(n=>`<span data-star="${n}">★</span>`).join("")}
+            </span>
+            <input type="text" placeholder="نام شما" class="review-author-input" data-author-for="${p.id}">
+            <input type="text" placeholder="نظر شما..." class="review-text-input" data-text-for="${p.id}">
+            <button data-submit-review="${p.id}">ثبت نظر</button>
+          </div>
+        </div>
+      </div>
+      <input type="file" accept="image/*" class="file-input-visually-hidden" id="fileInput-${p.id}">
+      <div class="upload-status" id="status-${p.id}" style="padding:0 16px;"></div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // event listeners بعد از رندر
+  // توجه: دکمه «بارگذاری عکس» اکنون یک <label for="fileInput-..."> است و
+  // مرورگر خودش پنجره انتخاب فایل را باز می‌کند؛ نیازی به addEventListener/click() نیست.
+  grid.querySelectorAll('input[type=file][id^="fileInput-"]').forEach(input=>{
+    input.addEventListener("change", (e)=>{
+      const id = input.id.replace("fileInput-","");
+      const file = e.target.files[0];
+      if(!file) return;
+      const statusEl = document.getElementById("status-"+id);
+      // دمو پیش‌نمایش: از یک img موقت داخل همان کارت استفاده می‌کنیم
+      const card = input.closest(".card");
+      let previewImg = card.querySelector(".card-img-wrap img");
+      if(!previewImg){
+        previewImg = document.createElement("img");
+        card.querySelector(".card-img-wrap .placeholder")?.remove();
+        card.querySelector(".card-img-wrap").prepend(previewImg);
+      }
+      uploadToImgbb(file, statusEl, previewImg, (url)=>{
+        const prod = products.find(p=>p.id===id);
+        if(prod){
+          prod.image = url;
+          saveProducts(products);
+          showToast("عکس محصول بروزرسانی شد");
+        }
+      });
+    });
+  });
+  grid.querySelectorAll("[data-order-id]").forEach(btn=>{
+    if(btn.disabled) return;
+    btn.addEventListener("click", ()=>openOrderModal(btn.dataset.orderId));
+  });
+
+  // علاقه‌مندی
+  grid.querySelectorAll("[data-fav-id]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      toggleFavorite(btn.dataset.favId);
+      renderProducts();
+    });
+  });
+
+  // مقایسه
+  grid.querySelectorAll(".compare-check").forEach(cb=>{
+    cb.addEventListener("change", (e)=>{
+      toggleCompare(cb.dataset.compareId, e.target.checked);
+    });
+  });
+
+  // باز/بسته کردن پنل نظرات
+  grid.querySelectorAll("[data-review-toggle]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.getElementById("reviewPanel-"+btn.dataset.reviewToggle).classList.toggle("open");
+    });
+  });
+
+  // انتخاب امتیاز ستاره‌ای
+  grid.querySelectorAll(".star-picker").forEach(picker=>{
+    let selected = 0;
+    picker.querySelectorAll("span").forEach(star=>{
+      star.addEventListener("click", ()=>{
+        selected = parseInt(star.dataset.star, 10);
+        picker.dataset.selected = selected;
+        picker.querySelectorAll("span").forEach(s=>{
+          s.classList.toggle("filled", parseInt(s.dataset.star,10) <= selected);
+        });
+      });
+    });
+  });
+
+  // ثبت نظر جدید
+  grid.querySelectorAll("[data-submit-review]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const id = btn.dataset.submitReview;
+      const picker = grid.querySelector(`.star-picker[data-picker-for="${id}"]`);
+      const stars = parseInt(picker?.dataset.selected || "0", 10);
+      const authorInput = grid.querySelector(`[data-author-for="${id}"]`);
+      const textInput = grid.querySelector(`[data-text-for="${id}"]`);
+      const author = (authorInput.value || "").trim() || "کاربر مهمان";
+      const text = (textInput.value || "").trim();
+
+      if(!stars){
+        showToast("لطفاً امتیاز ستاره‌ای را انتخاب کنید");
+        return;
+      }
+      if(!reviews[id]) reviews[id] = [];
+      reviews[id].push({author, stars, text});
+      saveReviews(reviews);
+      showToast("نظر شما ثبت شد ✓");
+      renderProducts();
+      document.getElementById("reviewPanel-"+id).classList.add("open");
+    });
+  });
+}
+
+/* ---------- رندر علاقه‌مندی‌ها ---------- */
+function renderFavorites(){
+  const grid = document.getElementById("favoritesGrid");
+  const favProducts = products.filter(p=>favorites.includes(p.id));
+  grid.innerHTML = "";
+  if(favProducts.length === 0){
+    grid.innerHTML = '<div class="empty-msg">هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید.</div>';
+    return;
+  }
+  favProducts.forEach(p=>{
+    const avg = getAvgRating(p.id);
+    const card = document.createElement("div");
+    card.className = "card";
+    const imgHtml = p.image ? `<img src="${p.image}" alt="${p.name}">` : `<div class="placeholder">بدون عکس</div>`;
+    card.innerHTML = `
+      <div class="card-img-wrap">
+        ${imgHtml}
+        <span class="badge">${p.category}</span>
+        <button class="fav-btn active" data-unfav-id="${p.id}" title="حذف از علاقه‌مندی‌ها">♥</button>
+      </div>
+      <div class="card-body">
+        <span class="cat">${p.category}</span>
+        <h3>${p.name}</h3>
+        <div class="desc">${p.desc}</div>
+        <div class="rating-row">
+          <span class="stars">${starsHtml(avg)}</span>
+          <span class="review-count">${avg ? avg.toFixed(1) : "بدون امتیاز"}</span>
+        </div>
+        <div class="price">${p.price.toLocaleString("fa-IR")} تومان</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  grid.querySelectorAll("[data-unfav-id]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      toggleFavorite(btn.dataset.unfavId);
+      renderFavorites();
+    });
+  });
+}
+
+/* ---------- مودال مقایسه ---------- */
+function openCompareModal(){
+  if(compareList.length < 2){
+    showToast("حداقل ۲ محصول برای مقایسه انتخاب کنید");
+    return;
+  }
+  const items = products.filter(p=>compareList.includes(p.id));
+  const table = document.getElementById("compareTable");
+  const rows = [
+    {label:"تصویر", get:p=> p.image ? `<img src="${p.image}">` : "بدون عکس"},
+    {label:"نام", get:p=>p.name},
+    {label:"دسته‌بندی", get:p=>p.category},
+    {label:"قیمت", get:p=>{
+      const d = p.discount || 0;
+      if(d > 0){
+        const fp = Math.round(p.price * (1 - d/100));
+        return `<span style="text-decoration:line-through;color:var(--muted);">${p.price.toLocaleString("fa-IR")}</span><br><b style="color:var(--warn);">${fp.toLocaleString("fa-IR")} تومان (${d}% تخفیف)</b>`;
+      }
+      return p.price.toLocaleString("fa-IR")+" تومان";
+    }},
+    {label:"وضعیت", get:p=>STATUS_LABELS[p.status || "available"]},
+    {label:"امتیاز", get:p=>{const a=getAvgRating(p.id); return a ? a.toFixed(1)+" / ۵ ("+getProductReviews(p.id).length+" نظر)" : "بدون امتیاز";}},
+    {label:"توضیحات", get:p=>p.desc}
+  ];
+  let html = "<tr><th>مشخصات</th>" + items.map(p=>`<th>${p.name}</th>`).join("") + "</tr>";
+  rows.forEach(r=>{
+    html += "<tr><th>"+r.label+"</th>" + items.map(p=>`<td>${r.get(p)}</td>`).join("") + "</tr>";
+  });
+  table.innerHTML = html;
+  document.getElementById("compareModalOverlay").classList.add("open");
+}
+document.getElementById("openCompareBtn").addEventListener("click", openCompareModal);
+document.getElementById("closeCompareModal").addEventListener("click", ()=>{
+  document.getElementById("compareModalOverlay").classList.remove("open");
+});
+document.getElementById("compareModalOverlay").addEventListener("click", (e)=>{
+  if(e.target.id === "compareModalOverlay") e.currentTarget.classList.remove("open");
+});
+document.getElementById("clearCompareBtn").addEventListener("click", ()=>{
+  compareList = [];
+  updateCompareBar();
+  renderProducts();
+});
+
+document.getElementById("searchInput").addEventListener("input", renderProducts);
+document.getElementById("categoryFilter").addEventListener("change", renderProducts);
+document.getElementById("statusFilter").addEventListener("change", renderProducts);
+
+/* ---------- افزودن محصول جدید ---------- */
+let newProductImageUrl = null;
+document.getElementById("newImageInput").addEventListener("change", (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const statusEl = document.getElementById("newImageStatus");
+  const previewEl = document.getElementById("newImagePreview");
+  uploadToImgbb(file, statusEl, previewEl, (url)=>{
+    newProductImageUrl = url;
+  });
+});
+
+document.getElementById("addProductBtn").addEventListener("click", ()=>{
+  const name = document.getElementById("newName").value.trim();
+  const category = document.getElementById("newCategory").value;
+  const price = parseInt(document.getElementById("newPrice").value, 10);
+  const desc = document.getElementById("newDesc").value.trim();
+  const status = document.getElementById("newStatus").value;
+  const discount = parseInt(document.getElementById("newDiscount").value, 10) || 0;
+
+  if(!name || !price || !desc){
+    showToast("لطفاً همه فیلدها را کامل کنید");
+    return;
+  }
+
+  products.push({
+    id: "p" + Date.now(),
+    name, category, price, desc, status, discount,
+    image: newProductImageUrl
+  });
+  saveProducts(products);
+  showToast("محصول جدید اضافه شد");
+
+  // پاک کردن فرم
+  document.getElementById("newName").value = "";
+  document.getElementById("newPrice").value = "";
+  document.getElementById("newDesc").value = "";
+  document.getElementById("newStatus").value = "available";
+  document.getElementById("newDiscount").value = "";
+  document.getElementById("newImagePreview").style.display = "none";
+  document.getElementById("newImageStatus").textContent = "";
+  newProductImageUrl = null;
+
+  // برگشت به فروشگاه
+  document.querySelector('nav button[data-tab="shop"]').click();
+  renderProducts();
+});
+
+/* ---------- مودال سفارش ---------- */
+let currentOrderImageUrl = null;
+let currentOrderProductId = null;
+
+function openOrderModal(productId){
+  currentOrderProductId = productId;
+  currentOrderImageUrl = null;
+  const prod = products.find(p=>p.id===productId);
+  document.getElementById("orderProductName").textContent = prod ? prod.name : "";
+  document.getElementById("orderName").value = "";
+  document.getElementById("orderPhone").value = "";
+  document.getElementById("orderImagePreview").style.display = "none";
+  document.getElementById("orderImageStatus").textContent = "";
+  document.getElementById("orderModalOverlay").classList.add("open");
+}
+document.getElementById("closeOrderModal").addEventListener("click", ()=>{
+  document.getElementById("orderModalOverlay").classList.remove("open");
+});
+document.getElementById("orderModalOverlay").addEventListener("click", (e)=>{
+  if(e.target.id === "orderModalOverlay") e.currentTarget.classList.remove("open");
+});
+
+document.getElementById("orderImageInput").addEventListener("change", (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const statusEl = document.getElementById("orderImageStatus");
+  const previewEl = document.getElementById("orderImagePreview");
+  uploadToImgbb(file, statusEl, previewEl, (url)=>{
+    currentOrderImageUrl = url;
+  });
+});
+
+document.getElementById("submitOrderBtn").addEventListener("click", ()=>{
+  const name = document.getElementById("orderName").value.trim();
+  const phone = document.getElementById("orderPhone").value.trim();
+
+  if(!name || !phone){
+    showToast("لطفاً نام و شماره تماس را وارد کنید");
+    return;
+  }
+
+  const orders = JSON.parse(localStorage.getItem("nakhkade_orders") || "[]");
+  const code = "NK-" + Math.floor(1000 + Math.random()*9000);
+  orders.push({
+    code,
+    productId: currentOrderProductId,
+    name, phone,
+    image: currentOrderImageUrl,
+    date: new Date().toISOString()
+  });
+  localStorage.setItem("nakhkade_orders", JSON.stringify(orders));
+
+  document.getElementById("orderModalOverlay").classList.remove("open");
+  showToast("سفارش شما ثبت شد ✓ کد پیگیری: " + code);
+});
+
+/* ---------- سفارش‌های من ---------- */
+const ORDER_STAGES = ["pending","confirmed","shipped","delivered"];
+const ORDER_STAGE_LABELS = {pending:"در انتظار تایید", confirmed:"تایید شد", shipped:"ارسال شد", delivered:"تحویل شد"};
+function getOrderStageIndex(order){
+  // دمو: وضعیت بر اساس زمان گذشته از ثبت سفارش شبیه‌سازی می‌شود
+  const hours = (Date.now() - new Date(order.date).getTime()) / 36e5;
+  if(hours < 1) return 0;
+  if(hours < 24) return 1;
+  if(hours < 72) return 2;
+  return 3;
+}
+function renderOrders(){
+  const wrap = document.getElementById("ordersList");
+  const orders = JSON.parse(localStorage.getItem("nakhkade_orders") || "[]").slice().reverse();
+  if(orders.length === 0){
+    wrap.innerHTML = '<div class="empty-msg">هنوز سفارشی ثبت نکرده‌اید.</div>';
+    return;
+  }
+  wrap.innerHTML = orders.map(o=>{
+    const prod = products.find(p=>p.id===o.productId);
+    const stageIdx = getOrderStageIndex(o);
+    const stage = ORDER_STAGES[stageIdx];
+    const dateStr = new Date(o.date).toLocaleDateString("fa-IR");
+    return `
+      <div class="order-card">
+        <div class="order-card-top">
+          <div>
+            <h4>${prod ? prod.name : "محصول حذف‌شده"}</h4>
+            <span class="order-code">کد پیگیری: ${o.code || "—"}</span> ·
+            <span class="order-date">${dateStr}</span>
+          </div>
+          <span class="order-status-pill ${stage}">${ORDER_STAGE_LABELS[stage]}</span>
+        </div>
+        <div class="order-steps">
+          ${ORDER_STAGES.map((s,i)=>`<span class="${i<=stageIdx?"done":""}"></span>`).join("")}
+        </div>
+      </div>`;
+  }).join("");
+}
+
+/* ---------- بنر تبلیغاتی ---------- */
+const PROMO_SLIDES = [
+  {title:"جشنواره تخفیف چرخ‌های خانگی", text:"تا ۱۵٪ تخفیف روی چرخ خیاطی سینگر ۸۲۸۰ — فقط همین هفته!", oldPrice:3200000, newPrice:2720000},
+  {title:"چرخ صنعتی جوکی با ۱۰٪ تخفیف", text:"مناسب کارگاه‌های تولیدی، همراه با ارسال رایگان.", oldPrice:12500000, newPrice:11250000},
+  {title:"محصولات جدید به نخ‌کده اضافه شد", text:"از تب «افزودن محصول» می‌توانید چرخ خیاطی خود را برای فروش ثبت کنید.", oldPrice:null, newPrice:null}
+];
+let promoIndex = 0;
+function renderPromoBanner(){
+  const slidesEl = document.getElementById("promoSlides");
+  const dotsEl = document.getElementById("promoDots");
+  slidesEl.innerHTML = PROMO_SLIDES.map(s=>`
+    <div class="promo-slide">
+      <h3>${s.title}</h3>
+      <p>${s.text}</p>
+      ${s.oldPrice ? `<div class="promo-price-row">
+        <span class="promo-old-price">${s.oldPrice.toLocaleString("fa-IR")} تومان</span>
+        <span class="promo-new-price">${s.newPrice.toLocaleString("fa-IR")} تومان</span>
+      </div>` : ""}
+    </div>
+  `).join("");
+  dotsEl.innerHTML = PROMO_SLIDES.map((_,i)=>`<button data-dot="${i}" class="${i===promoIndex?"active":""}"></button>`).join("");
+  updatePromoPosition();
+  dotsEl.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click", ()=>{ promoIndex = parseInt(btn.dataset.dot,10); updatePromoPosition(); });
+  });
+}
+function updatePromoPosition(){
+  const slidesEl = document.getElementById("promoSlides");
+  // چون جهت راست‌به‌چپ است، اسلاید با translateX مثبت جابه‌جا می‌شود
+  slidesEl.style.transform = `translateX(${promoIndex * 100}%)`;
+  document.querySelectorAll("#promoDots button").forEach((b,i)=>b.classList.toggle("active", i===promoIndex));
+}
+document.getElementById("promoNext").addEventListener("click", ()=>{
+  promoIndex = (promoIndex + 1) % PROMO_SLIDES.length;
+  updatePromoPosition();
+});
+document.getElementById("promoPrev").addEventListener("click", ()=>{
+  promoIndex = (promoIndex - 1 + PROMO_SLIDES.length) % PROMO_SLIDES.length;
+  updatePromoPosition();
+});
+renderPromoBanner();
+setInterval(()=>{
+  promoIndex = (promoIndex + 1) % PROMO_SLIDES.length;
+  updatePromoPosition();
+}, 6000);
+
+/* ---------- چت‌بات راهنما ---------- */
+const CHATBOT_QA = [
+  {q:"چرخ صنعتی چیه و چه فرقی با خانگی داره؟", a:"چرخ صنعتی برای دوخت حجم بالا و پارچه‌های ضخیم در کارگاه‌ها طراحی شده و معمولاً سریع‌تر و بادوام‌تر است. چرخ خانگی برای استفاده روزمره و دوخت‌های سبک‌تر مناسب‌تر و ارزان‌تر است."},
+  {q:"قیمت‌ها چطوره؟", a:"قیمت‌ها زیر هر محصول در فروشگاه نمایش داده می‌شود. برخی محصولات تخفیف دارند که با نشان قرمز رنگ روی کارت مشخص شده‌اند."},
+  {q:"چطور سفارش ثبت کنم؟", a:"روی دکمه «ثبت سفارش» زیر هر محصول بزنید، نام و شماره تماس‌تان را وارد کنید و در صورت تمایل عکس هم پیوست کنید. این یک ثبت دموی بدون پرداخت واقعی است."},
+  {q:"چطور محصول به علاقه‌مندی‌هام اضافه کنم؟", a:"روی آیکون قلب گوشه هر کارت محصول بزنید. لیست کامل را هم می‌توانید از تب «علاقه‌مندی‌ها» ببینید."},
+  {q:"چطور دو محصول رو مقایسه کنم؟", a:"روی گزینه «افزودن به مقایسه» زیر هر محصول (حداکثر ۳ محصول) کلیک کنید؛ سپس از نوار پایین صفحه روی «مقایسه کن» بزنید."}
+];
+function addChatMsg(text, who){
+  const box = document.getElementById("chatbotMessages");
+  const div = document.createElement("div");
+  div.className = "chat-msg " + who;
+  div.textContent = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+function renderChatQuestions(){
+  const qWrap = document.getElementById("chatbotQuestions");
+  qWrap.innerHTML = "";
+  CHATBOT_QA.forEach((item, i)=>{
+    const btn = document.createElement("button");
+    btn.textContent = item.q;
+    btn.addEventListener("click", ()=>{
+      addChatMsg(item.q, "user");
+      setTimeout(()=>addChatMsg(item.a, "bot"), 300);
+    });
+    qWrap.appendChild(btn);
+  });
+}
+document.getElementById("chatbotToggle").addEventListener("click", ()=>{
+  const panel = document.getElementById("chatbotPanel");
+  panel.classList.toggle("open");
+  if(panel.classList.contains("open") && document.getElementById("chatbotMessages").children.length === 0){
+    addChatMsg("سلام! من راهنمای نخ‌کده هستم 👋 یکی از سوالات زیر رو انتخاب کن.", "bot");
+    renderChatQuestions();
+  }
+});
+document.getElementById("chatbotClose").addEventListener("click", ()=>{
+  document.getElementById("chatbotPanel").classList.remove("open");
+});
+
+/* ---------- حالت تاریک/روشن ---------- */
+function applyTheme(theme){
+  document.documentElement.setAttribute("data-theme", theme);
+  const btn = document.getElementById("themeToggle");
+  btn.textContent = (theme === "dark") ? "☀️" : "🌙";
+  localStorage.setItem("nakhkade_theme", theme);
+}
+(function initTheme(){
+  const saved = localStorage.getItem("nakhkade_theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(saved || (prefersDark ? "dark" : "light"));
+})();
+document.getElementById("themeToggle").addEventListener("click", ()=>{
+  const current = document.documentElement.getAttribute("data-theme");
+  applyTheme(current === "dark" ? "light" : "dark");
+});
+
+/* ---------- PWA: نصب نرم‌افزار ---------- */
+let deferredInstallPrompt = null;
+let pwaReady = false;
+
+function setupPWA(){
+  // آیکون ساده SVG به‌صورت درون‌خطی (data URI) برای مانیفست
+  const iconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+    <rect width="192" height="192" rx="36" fill="#b5542c"/>
+    <circle cx="96" cy="96" r="54" fill="none" stroke="#f6f1e7" stroke-width="10"/>
+    <circle cx="96" cy="96" r="10" fill="#f6f1e7"/>
+    <line x1="96" y1="42" x2="96" y2="60" stroke="#f6f1e7" stroke-width="8" stroke-linecap="round"/>
+  </svg>`;
+  const iconUrl = "data:image/svg+xml;base64," + btoa(iconSvg);
+
+  const manifest = {
+    name: "نخ‌کده",
+    short_name: "نخ‌کده",
+    description: "مقایسه و خرید راحت‌تر چرخ خیاطی صنعتی و خانگی",
+    start_url: location.href.split("#")[0],
+    scope: location.href.split("#")[0],
+    display: "standalone",
+    background_color: "#f6f1e7",
+    theme_color: "#b5542c",
+    dir: "rtl",
+    lang: "fa",
+    icons: [
+      {src: iconUrl, sizes: "192x192", type: "image/svg+xml", purpose: "any maskable"},
+      {src: iconUrl, sizes: "512x512", type: "image/svg+xml", purpose: "any maskable"}
+    ]
+  };
+  try{
+    const manifestBlob = new Blob([JSON.stringify(manifest)], {type:"application/json"});
+    const manifestUrl = URL.createObjectURL(manifestBlob);
+    const link = document.createElement("link");
+    link.rel = "manifest";
+    link.href = manifestUrl;
+    document.head.appendChild(link);
+  }catch(e){}
+
+  // سرویس‌ورکر حداقلی (برای دسترسی آفلاین به همین صفحه)
+  if("serviceWorker" in navigator){
+    try{
+      const swCode = `
+        self.addEventListener("install", e=>self.skipWaiting());
+        self.addEventListener("activate", e=>self.clients.claim());
+        self.addEventListener("fetch", e=>{
+          e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)));
+        });
+      `;
+      const swBlob = new Blob([swCode], {type:"application/javascript"});
+      const swUrl = URL.createObjectURL(swBlob);
+      navigator.serviceWorker.register(swUrl).catch(()=>{});
+    }catch(e){}
+  }
+
+  window.addEventListener("beforeinstallprompt", (e)=>{
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    pwaReady = true;
+  });
+  window.addEventListener("appinstalled", ()=>{
+    localStorage.setItem("nakhkade_installed", "1");
+    showToast("نخ‌کده با موفقیت نصب شد ✓");
+  });
+}
+setupPWA();
+
+function isStandalone(){
+  return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+}
+function isIOS(){
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+function openInstallModal(){
+  document.getElementById("installModalOverlay").classList.add("open");
+  document.getElementById("installAskBox").style.display = "block";
+  document.getElementById("installManualBox").style.display = "none";
+  document.getElementById("installSuccessBox").style.display = "none";
+}
+function closeInstallModal(){
+  document.getElementById("installModalOverlay").classList.remove("open");
+}
+
+document.getElementById("navInstallBtn").addEventListener("click", ()=>{
+  if(isStandalone()){
+    showToast("نخ‌کده از قبل روی دستگاه شما نصب است ✓");
+    return;
+  }
+  openInstallModal();
+});
+
+document.getElementById("installYesBtn").addEventListener("click", async ()=>{
+  localStorage.setItem("nakhkade_install_prompted", "1");
+  if(deferredInstallPrompt){
+    document.getElementById("installAskBox").style.display = "none";
+    try{
+      deferredInstallPrompt.prompt();
+      const choice = await deferredInstallPrompt.userChoice;
+      deferredInstallPrompt = null;
+      if(choice && choice.outcome === "accepted"){
+        showInstallSuccess("نصب واقعی با موفقیت انجام شد");
+      } else {
+        closeInstallModal();
+        showToast("نصب لغو شد");
+      }
+    }catch(e){
+      showInstallSuccess("نصب دموی نخ‌کده انجام شد");
+    }
+  } else if(isIOS()){
+    document.getElementById("installAskBox").style.display = "none";
+    document.getElementById("installManualBox").style.display = "block";
+  } else {
+    showInstallSuccess("نصب دموی نخ‌کده انجام شد");
+  }
+});
+document.getElementById("installNoBtn").addEventListener("click", ()=>{
+  localStorage.setItem("nakhkade_install_prompted", "1");
+  closeInstallModal();
+});
+document.getElementById("installManualDoneBtn").addEventListener("click", closeInstallModal);
+document.getElementById("installSuccessDoneBtn").addEventListener("click", closeInstallModal);
+
+function showInstallSuccess(subtitle){
+  localStorage.setItem("nakhkade_installed", "1");
+  document.getElementById("installAskBox").style.display = "none";
+  document.getElementById("installManualBox").style.display = "none";
+  document.getElementById("installSuccessBox").style.display = "block";
+  document.getElementById("installSuccessSubtitle").textContent = subtitle;
+}
+
+// نمایش خودکار دیالوگ نصب فقط در اولین ورود کاربر
+(function maybeShowInstallOnFirstVisit(){
+  if(isStandalone()) return;
+  const alreadyPrompted = localStorage.getItem("nakhkade_install_prompted");
+  if(alreadyPrompted) return;
+  setTimeout(openInstallModal, 900);
+})();
+
+/* ---------- شروع ---------- */
+renderProducts();
+</script>
+
+</body>
+</html>
